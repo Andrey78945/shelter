@@ -1,9 +1,9 @@
 .header {
   position: relative;
-  padding: 14px 0; 
-  width: 100%; 
+  padding: 14px 0;
+  width: 100%;
   font-weight: 500;
-  color: var(--color-white);  
+  color: var(--color-white);
   background-color: var(--color-black);
 }
 
@@ -14,10 +14,8 @@
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; 
-  -webkit-box-pack: justify; 
-      -ms-flex-pack: justify; 
-          justify-content: space-between;           
+          align-items: center;
+
 }
 
 .black {
@@ -35,11 +33,11 @@
   visibility: visible;
   z-index: 3;
 }
- 
+
 .burger {
   display: none;
   position: relative;
-  z-index: 5;     
+  z-index: 5;
   width: 18px;
   height: 10px;
   -webkit-transition: all .4s ease;
@@ -49,33 +47,33 @@
 
 .burger__line {
   position: absolute;
-  right: 0;     
+  right: 0;
   width: 18px;
-  height: 2px;  
+  height: 2px;
   background-color: #fff;
-  -webkit-transition: all .4s ease;  
-  -o-transition: all .4s ease;  
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 .burger__line_line1 {
-  top: 0; 
+  top: 0;
 }
 
 .burger__line_line2 {
-  top: 50%;  
+  top: 50%;
   -webkit-transform: scale(1) translate(0px, -50%);
           -ms-transform: scale(1) translate(0px, -50%);
       transform: scale(1) translate(0px, -50%);
 }
 
 .burger__line_line3 {
-  bottom: 0; 
+  bottom: 0;
 }
 
 .header__logo {
   display: block;
-  margin-right: 5.25%;
+  margin-right: 5.3%;
   width: 82px;
   height: 52px;
 }
@@ -99,7 +97,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   justify-items: center;
-  width: 100%;
+  width: 88%;
 }
 
 .header__nav {
@@ -110,7 +108,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-right: 50%;  
+  margin-right: 50%;
 }
 
 .nav__list {
@@ -138,7 +136,7 @@
 }
 
 .nav__link:active {
-  color: var(--color-active); 
+  color: var(--color-active);
 }
 
 .active {
@@ -148,14 +146,14 @@
 .header-top__right {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;  
+  display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-width: 90px;    
+  min-width: 90px;
   -webkit-transition: all .4s ease;
   -o-transition: all .4s ease;
   transition: all .4s ease;
@@ -179,21 +177,21 @@
     margin-right: 20.3%;
   }
  }
- 
+
  @media (max-width: 991.98px) {
   .header {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    padding: 2.5px 0; 
+    padding: 2.5px 0;
   }
 
   .burger {
-    display: block;   
+    display: block;
     position: absolute;
     top: 13px;
     right: 13px;
-    z-index: 25; 
+    z-index: 25;
   }
 
   .header__logo {
@@ -211,7 +209,7 @@
 
   .toggle .burger__line_line1 {
     width: 18px;
-    top: 50%; 
+    top: 50%;
     background-color: var(--color-black);
     transform: rotate(-45deg) translate(0.5px, -50%);
   }
@@ -225,12 +223,12 @@
     bottom: 50%;
     background-color: var(--color-black);
     transform: rotate(45deg) translate(0.5px, 50%);
-  }   
+  }
 
   .burger:active .burger__line {
     background-color: var(--color-active);
   }
-  
+
   .header__burger {
     visibility: hidden;
     position: fixed;
@@ -243,7 +241,7 @@
     padding-top: 13px;
     padding-bottom: 37px;
     padding-left: 14px;
-    width: 100%; 
+    width: 100%;
     color: var(--color-black-blue);
     background-color: var(--color-white);
     overflow: auto;
@@ -251,7 +249,7 @@
     transition: opacity .4s ease, left .4s ease 0s, -webkit-transform .4s ease-in;
     -o-transition: transform .4s ease-in, opacity .4s ease, left .4s ease 0s;
     transition: transform .4s ease-in, opacity .4s ease, left .4s ease 0s;
-    transition: transform .4s ease-in, opacity .4s ease, left .4s ease 0s, -webkit-transform .4s ease-in;        
+    transition: transform .4s ease-in, opacity .4s ease, left .4s ease 0s, -webkit-transform .4s ease-in;
   }
 
   .header__burger_active {
@@ -291,8 +289,8 @@
     line-height: 140%;
   }
  }
- 
- @media (max-width: 575.98px) { 
-    
+
+ @media (max-width: 575.98px) {
+
  }
 
