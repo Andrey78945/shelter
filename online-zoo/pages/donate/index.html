@@ -284,11 +284,13 @@
                 </div>
 
                 <div class="feed__form_group group_last">
-                  <label class="radio_1"><input class="feed__input feed__input_radio" name="period" type="radio"
-                      required data-validate-field="period">Monthly</label>
+                  <input class="feed__input feed__input_radio" id="monthly" name="period" type="radio" required
+                    data-validate-field="period">
+                  <label class="radio_1" for="monthly">Monthly</label>
 
-                  <label><input class="feed__input feed__input_radio" name="period" type="radio" checked required
-                      data-validate-field="period">Once</label>
+                  <input class="feed__input feed__input_radio" id="once" name="period" type="radio" checked required
+                    data-validate-field="period">
+                  <label class="radio_2" for="once">Once</label>
                 </div>
 
                 <button class="feed__button btn feed__form_group" type="submit">FEED A FRIEND NOW</button>
