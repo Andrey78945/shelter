@@ -235,6 +235,7 @@
 
 .feed__input_amount {
   margin-bottom: 19px;
+  padding-left: 10px;
   width: 268px;
   height: 54px;
   border: 2px solid #929699;
@@ -243,7 +244,6 @@
 }
 
 .feed__input_amount::placeholder {
-  padding-left: 10px;
   margin-right: 10px;
   font-weight: 400;
   line-height: 140%;
