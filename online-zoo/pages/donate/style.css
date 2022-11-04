@@ -10,7 +10,7 @@
 
 .feed {
   padding-top: 40px;
-  padding-bottom: 180px;
+  padding-bottom: 177px;
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
   opacity: 0.9;
 }
@@ -129,12 +129,40 @@
 
 .feed__bar_list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 50px;
 }
 
 .feed__bar_item {
   position: relative;
+}
+
+.feed__bar_item5000 {
+  margin-right: 5.2%;
+}
+
+.feed__bar_item2000 {
+  margin-right: 5.8%;
+}
+
+.feed__bar_item1000 {
+  margin-right: 5.8%;
+}
+
+.feed__bar_item500 {
+  margin-right: 6.9%;
+}
+
+.feed__bar_item250 {
+  margin-right: 6.9%;
+}
+
+.feed__bar_item100 {
+  margin-right: 7.6%;
+}
+
+.feed__bar_item50 {
+  margin-right: 8.6%;
 }
 
 .feed__bar_item25 {

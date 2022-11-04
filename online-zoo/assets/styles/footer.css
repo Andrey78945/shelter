@@ -191,6 +191,11 @@
   font-weight: 100;
 }
 
+.footer__copy:active {
+  color: var(--color-active);
+  text-decoration: underline;
+}
+
 @media (max-width: 1199.98px) {
   .footer__container {
     width: 100%;
