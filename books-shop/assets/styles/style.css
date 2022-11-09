@@ -15,26 +15,26 @@ html {
 :root {
   --color-white: #fff;
   --color-black: #000;
-  --color-frosted-glass-white: #fdfdff;
-  --color-black-blue: #333b41;
+  --color-7: #777;
+  --color-7a: #7a7a7a;
   --color-active: #4b9200;
   --color-orange: #f9804b;
-  --color-yellow: #ffee2e;
+  --color-back: #efeee8;
   --color-rad: #d31414;
   --color-gray: #767474;
   --color-gray-smoky: #ababab;
   --color-gray-light: #f1f3f2;
-  --color-hover: #e47209; 
+  --color-hover: #e47209;
 }
 
 body {
-  margin: 0; 
-  font-family: "roboto", Arial, sans-serif; 
-  font-size: 16px;
+  margin: 0;
+  font-family: "roboto", Arial, sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 32px;
-  color: var(----color-black-blue);
-  background-color: var(--color-white);  
+  line-height: 24px;
+  color: var(----color-7a);
+  background-color: var(--color-back);
 }
 
 body._lock {
@@ -42,7 +42,7 @@ body._lock {
 }
 
 button, input {
-  font: inherit;  
+  font: inherit;
 }
 
 button {
@@ -72,7 +72,7 @@ a {
   cursor: pointer;
 }
 
-ol, 
+ol,
 ul {
   margin: 0;
   padding: 0;
@@ -91,30 +91,23 @@ svg {
 }
 
 .container {
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
-  max-width: 1160px; 
+  max-width: 1160px;
 }
 
-.logo {
-  width: 82px;
-  height: 52px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
- 
 .btn {
   font-weight: 500;
   color: var(--color-white);
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
-  border-radius: 25px;  
-} 
+  border-radius: 25px;
+}
 
 .btn:hover {
   background:none;
   background-color: var(--color-hover);
 }
-    
+
 
 .btn:active {
   background:none;
@@ -146,38 +139,3 @@ label {
   width: 1px !important;
   overflow: hidden;
 }
-
-@media (max-width: 1199.98px) {
-  .container {
-   max-width: 1160px; 
-   padding-left: 30px;
-   padding-right: 30px;
-   }
- }
- 
- @media (max-width: 991.98px) {
-   .container {
-     max-width: 940px; 
-     padding-left: 20px;
-     padding-right: 20px;
-   }
- }
- 
- @media (max-width: 575.98px) {      
-   .container {
-     margin: 0 auto;
-     padding: 0 10px;
-     max-width: 576px;      
-   }
- 
-   .logo {
-     width: 97px;
-     height: 22px;
-   }
- 
-   .section-title {
-     font-size: 28px;
-     line-height: 38px;
-   }
- }
-

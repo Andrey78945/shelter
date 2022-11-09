@@ -1,15 +1,15 @@
 .footer {
   padding-top: 38px;
   padding-bottom: 50px;
-  background-color: #111115;
+  background-color: #edebe4;
 }
 
-.footer__container {   
+.footer__container {
   display: grid;
   grid-template-columns: 1fr .9fr 1fr;
   grid-template-rows: repeat(3, auto);
-  grid-template-areas: "logo nav form" 
-                       "btn nav copy" 
+  grid-template-areas: "logo nav form"
+                       "btn nav copy"
                        "social nav copy";
   color: var(--color-white);
 }
@@ -34,9 +34,9 @@
 }
 
 .footer__nav {
-  grid-area: nav;  
+  grid-area: nav;
   align-self: flex-end;
-} 
+}
 
 .footer__item:not(:last-child) {
   margin-right: 31.7%;
@@ -54,17 +54,17 @@
 .contacts__input {
   padding-left: 9px;
   width: 228px;
-  height: 42px;   
+  height: 42px;
   outline: none;
   border: .7px solid var(--color-orange);
   border-radius: 2px;
   background-color: #111115;
   transition: background-color .4s ease,
     border-color .4s ease;
-}    
+}
 
 .contacts__input::placeholder {
-  color: #bdbdbd; 
+  color: #bdbdbd;
   line-height: 140%;
   transition: color .4s ease;
 }
@@ -72,7 +72,7 @@
 .contacts__input:hover {
   border-color: var(--color-hover);
   background-color: var(--color-white);
-} 
+}
 
 .contacts__input:active {
   border-color: var(--color-active);
@@ -87,8 +87,8 @@
   border-radius: 5px;
   background: none;
   background-color: var(--color-orange);
-}  
-  
+}
+
 .contacts__button {
   padding: 9px 38px;
   max-width: 129px;
@@ -119,11 +119,11 @@
   grid-area: social;
   display: flex;
   flex-direction: column;
-  margin-bottom: 6px; 
+  margin-bottom: 6px;
   padding-top: 45px;
 }
 
-.footer__socialitem {  
+.footer__socialitem {
   height: 26px;
   -webkit-transition: background-color .3s ease;
   -webkit-transition: background-color .3s ease,
@@ -138,7 +138,7 @@
   margin-bottom: 9px;
 }
 
-.footer__sociallink { 
+.footer__sociallink {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -158,17 +158,17 @@
 }
 
 .footer__sociallink:active {
-  color: var(--color-active); 
+  color: var(--color-active);
 }
 
 
 
-.footer__sociallink svg { 
+.footer__sociallink svg {
   margin-right: 9px;
-  vertical-align: top; 
+  vertical-align: top;
 }
 
-.footer__sociallink svg circle { 
+.footer__sociallink svg circle {
   fill: #c4c4c4;
 }
 
@@ -214,33 +214,33 @@
 }
 
 
-@media (max-width: 991.98px) { 
+@media (max-width: 991.98px) {
   .footer {
     padding-top: 10px;
-    padding-bottom: 7px; 
+    padding-bottom: 7px;
   }
-  
-  .footer__container {   
+
+  .footer__container {
     display: grid;
-    grid-template-columns: .52fr .48fr; 
-    grid-template-areas: "logo social" 
-                         "btn social" 
-                         "nav copy";  
+    grid-template-columns: .52fr .48fr;
+    grid-template-areas: "logo social"
+                         "btn social"
+                         "nav copy";
   }
-    
+
   .footer__input {
     display: none;
   }
-    
+
   .footer__nav {
     display: block;
-    grid-area: nav;  
+    grid-area: nav;
     align-self: end;
     justify-content: flex-start;
     margin-right: 0;
     margin-bottom: 0;
     padding-top: 30px;
-  } 
+  }
 
   .footer__list {
     flex-direction: row;
@@ -250,22 +250,22 @@
     font-size: 14px;
     font-weight: 400;
   }
-  
+
   .footer__item:not(:last-child) {
     margin-right: 12%;
     margin-bottom: 0;
   }
-  
+
   .contacts__form {
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .form-group {
     margin-right: 10px;
   }
-  
-  
+
+
   .footer__button {
     grid-area: btn;
     align-self: start;
@@ -275,8 +275,8 @@
     border-radius: 5px;
     background: none;
     background-color: var(--color-orange);
-  }  
-    
+  }
+
   .contacts__button {
     align-self: start;
     padding: 9px 38px;
@@ -291,14 +291,14 @@
     transition: background-color .4s ease,
       border-color .4s ease;
   }
-    
+
   .footer__sociallist {
     grid-area: social;
-    align-items: flex-end; 
+    align-items: flex-end;
     padding-top: 0px;
   }
-  
-  .footer__socialitem {  
+
+  .footer__socialitem {
     height: 26px;
     width: 26px;
     -webkit-transition: background-color .3s ease;
@@ -313,14 +313,14 @@
   .socialitem_text {
     display: none;
   }
-  
+
   .footer__socialitem:not(:last-child) {
     margin-bottom: 21px;
   }
-      
-  .footer__copy { 
+
+  .footer__copy {
     width: 228px;
-    margin: 0; 
+    margin: 0;
     padding-top: 27px;
   }
 }
@@ -328,17 +328,17 @@
 @media (max-width: 575.98px) {
   .footer {
     padding-top: 18px;
-    padding-bottom: 7px; 
+    padding-bottom: 7px;
   }
-  
-  .footer__container {   
+
+  .footer__container {
     display: grid;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-areas: "logo"
-                         "social" 
-                         "btn" 
+                         "social"
+                         "btn"
                           "copy"
-                          "nav";  
+                          "nav";
   }
 
   .footer__logo {
@@ -346,15 +346,15 @@
     width: 128px;
     height: 25px;
   }
-    
+
   .footer__nav {
     display: block;
-    grid-area: nav;  
-    align-self: end; 
+    grid-area: nav;
+    align-self: end;
     margin-right: 0;
     margin-bottom: 0;
     padding: 15px 10px 0px;
-  } 
+  }
 
   .footer__list {
     flex-direction: row;
@@ -365,22 +365,22 @@
     font-size: 14px;
     font-weight: 400;
   }
-  
+
   .footer__item:not(:last-child) {
     margin-right: 0;
     margin-bottom: 0;
   }
-  
+
   .contacts__form {
     display: flex;
     justify-content: flex-end;
   }
-  
+
   .form-group {
     margin-right: 10px;
   }
-  
-  
+
+
   .footer__button {
     grid-area: btn;
     align-self: start;
@@ -390,27 +390,27 @@
     border-radius: 5px;
     background: none;
     background-color: var(--color-orange);
-  }  
-        
+  }
+
   .footer__sociallist {
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     margin: 0 auto;
     padding-top: 29px;
     padding-bottom: 31px;
     width: 80%;
   }
-  
-  
+
+
   .footer__socialitem:not(:last-child) {
     margin-bottom: 0px;
     margin-right: 12.5%;
   }
-      
-  .footer__copy { 
+
+  .footer__copy {
     width: 214px;
-    margin: 0; 
+    margin: 0;
     padding-top: 24px;
     font-size: 15px;
     line-height: 200%;
