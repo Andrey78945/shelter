@@ -16,21 +16,6 @@
   justify-content: space-between;
 }
 
-.black {
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
- height: auto;
-  background-color: rgba(0, 0, 0, .7);
-}
-
-.black_active {
-  visibility: visible;
-  z-index: 3;
-}
 .header__logo {
   display: block;
   width: 139px;

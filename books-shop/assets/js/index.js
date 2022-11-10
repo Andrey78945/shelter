@@ -71,4 +71,30 @@ const books = [{
 ];
 
 
+// Pop-up
+let show = document.querySelectorAll(".show-btn"),
+  backstage = document.querySelector('.black'),
+  closeBtn = document.querySelector(".cls-btn"),
+  modal = document.querySelector(".modal"),
+  content = document.querySelector(".modal__content")
+
+function closePopUp() {
+  //  document.body.classList.remove('_lock')
+  backstage.classList.remove('black_active')
+  modal.classList.remove("modal__open")
+  //  content.removeChild(content.children[0])
+}
+
+show.forEach(el => {
+  el.addEventListener("click", function () {
+    //   document.body.classList.toggle('_lock')
+    modal.classList.toggle("modal__open")
+    backstage.classList.toggle('black_active')
+    //  content.append(el.querySelector('.testimonials__content').cloneNode(true))
+  })
+})
+
+closeBtn.addEventListener("click", closePopUp)
+backstage.addEventListener("click", closePopUp)
+
 
