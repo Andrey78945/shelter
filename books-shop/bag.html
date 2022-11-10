@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PetStory Online ZOO project. Donate">
-    <title>Bookstore</title>
+    <title>User Bag</title>
 
     <link rel="preload" href="./assets/fonts/PlusJakartaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Prata-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,7 +29,6 @@
 
 <body>
     <div class="site-container">
-        <div class="black"></div>
         <header class="header">
             <div class="header__container container">
                 <a class="header__logo" href="./index.html">
@@ -48,8 +47,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <img class="nav__icon" src="./assets/icons/bag.svg" alt="">
-                            <a class="nav__link" href="./bag.html">Bag</a>
+                            <a class="nav__link" href="./index.html">Catalog</a>
                         </li>
 
                         <li class="nav__item">
@@ -59,13 +57,12 @@
                     </ul>
                 </nav>
             </div>
-            <h1 class="visually-hidden">Bookstore</h1>
         </header>
 
         <main class="main">
             <section class="catalog">
                 <div class="catalog__container container">
-                    <h2 class="catalog__title section-title">BOOK CATALOG</h2>
+                    <h1 class="catalog__title section-title">ORDER BOOKS</h1>
                     <ul class="catalog__list">
                         <li class="catalog__item card">
                             <img class="card__picture" src="./assets/images/EffectiveJavaScript68.webp"
@@ -74,11 +71,7 @@
                                 <p class="card__author">David Herman</p>
                                 <h3 class="card__title">Effective JavaScript</h3>
                                 <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
-                                <button class="btn card__button delete-btn">X</button>
+                                <button class="btn card__button delete-btn delete-btn-visible">X</button>
                             </article>
                         </li>
                         <li class="catalog__item card">
@@ -87,10 +80,6 @@
                                 <p class="card__author">Alex Bank, Eve Porcello</p>
                                 <h3 class="card__title">Learning React</h3>
                                 <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
                                 <button class="btn card__button delete-btn">X</button>
                             </article>
                         </li>
@@ -100,16 +89,13 @@
                             <article class="card__content">
                                 <p class="card__author">David Herman</p>
                                 <h3 class="card__title">Effective JavaScript</h3>
-                                <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
+                                <p class="card__price">Price: $<span class="price">125</span></p>
                                 <button class="btn card__button delete-btn">X</button>
                             </article>
                         </li>
-
                     </ul>
+                    <p class="card__price">Total: $<span class="price">125</span></p>
+                    <a class="btn catalog__button confirm-btn" href="./order.html">Confirm order</a>
                 </div>
             </section>
         </main>
@@ -172,12 +158,6 @@
                 </ul>
             </nav>
         </footer>
-    </div>
-    <div class="modal">
-        <div class="pop-up__close">
-            <img src="../../assets/icons/x_icon.svg">
-        </div>
-        <div class="modal__content"></div>
     </div>
 </body>
 

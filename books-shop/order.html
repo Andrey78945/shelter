@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PetStory Online ZOO project. Donate">
-    <title>Bookstore</title>
+    <title>Order</title>
 
     <link rel="preload" href="./assets/fonts/PlusJakartaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Prata-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,7 +29,6 @@
 
 <body>
     <div class="site-container">
-        <div class="black"></div>
         <header class="header">
             <div class="header__container container">
                 <a class="header__logo" href="./index.html">
@@ -48,8 +47,7 @@
                         </li>
 
                         <li class="nav__item">
-                            <img class="nav__icon" src="./assets/icons/bag.svg" alt="">
-                            <a class="nav__link" href="./bag.html">Bag</a>
+                            <a class="nav__link" href="./index.html">Catalog</a>
                         </li>
 
                         <li class="nav__item">
@@ -59,57 +57,84 @@
                     </ul>
                 </nav>
             </div>
-            <h1 class="visually-hidden">Bookstore</h1>
         </header>
 
         <main class="main">
-            <section class="catalog">
-                <div class="catalog__container container">
-                    <h2 class="catalog__title section-title">BOOK CATALOG</h2>
-                    <ul class="catalog__list">
-                        <li class="catalog__item card">
-                            <img class="card__picture" src="./assets/images/EffectiveJavaScript68.webp"
-                                alt="Effective Java Script">
-                            <article class="card__content">
-                                <p class="card__author">David Herman</p>
-                                <h3 class="card__title">Effective JavaScript</h3>
-                                <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
-                                <button class="btn card__button delete-btn">X</button>
-                            </article>
-                        </li>
-                        <li class="catalog__item card">
-                            <img class="card__picture" src="./assets/images/LearningReact2nd.webp" alt="Learning React">
-                            <article class="card__content">
-                                <p class="card__author">Alex Bank, Eve Porcello</p>
-                                <h3 class="card__title">Learning React</h3>
-                                <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
-                                <button class="btn card__button delete-btn">X</button>
-                            </article>
-                        </li>
-                        <li class="catalog__item card">
-                            <img class="card__picture" src="./assets/images/EffectiveJavaScript68.webp"
-                                alt="Effective Java Script">
-                            <article class="card__content">
-                                <p class="card__author">David Herman</p>
-                                <h3 class="card__title">Effective JavaScript</h3>
-                                <p class="card__price">Price: <span class="price">125</span></p>
-                                <div class="card__buttons">
-                                    <button class="btn card__button show-btn">Show more</button>
-                                    <button class="btn card__button add-btn">Add to bag</button>
-                                </div>
-                                <button class="btn card__button delete-btn">X</button>
-                            </article>
-                        </li>
+            <section class="order">
+                <div class="order__container container">
+                    <h2 class="order__title section-title">SEND TO</h2>
 
-                    </ul>
+                    <form class="order__form form" id="form" action="" autocomplete="off" method="POST">
+                        <label class="form__label form__label_name" for="name">Name</label>
+                        <input class="form__input form__input_name" id="name" name="name" type="text" minlength="4"
+                            required>
+
+                        <label class="form__label form__label_surname" for="surname">Surname</label>
+                        <input class="form__input form__input_surname" id="surname" name="name" type="text"
+                            minlength="5" required>
+
+                        <label class="form__label form__label_date" for="date">Delivery</label>
+                        <input class="form__input form__input_date" id="date" name="date" type="date" required>
+
+                        <label class="form__label form__label_street" for="street">Street</label>
+                        <input class="form__input form__input_street" id="street" name="street" type="text"
+                            minlength="5" required>
+
+                        <label class="form__label form__label_house" for="house">House</label>
+                        <input class="form__input form__input_house" id="house" name="house" type="number" min="0"
+                            required>
+
+                        <label class="form__label form__label_flat" for="flat">Flat number</label>
+                        <input class="form__input form__input_flat" id="flat" name="flat" type="number" min="0"
+                            required>
+
+                        <fieldset class="form__set" id="radio-set">
+                            <legend class="form__legend">Choose the payment type</legend>
+
+                            <label class="form__label form__label_pay" for="cash">
+                                <input class="form__input form__input_pay" id="cash" name="payment" type="radio"
+                                    required>
+                                Cash</label>
+
+                            <label class="form__label form__label_pay" for="card"><input
+                                    class="form__input form__input_pay" id="card" name="payment" type="radio" required>
+                                Card</label>
+                        </fieldset>
+
+                        <fieldset class="form__set" id="checkbox-set">
+                            <legend class="form__legend">Choose 2 gifts</legend>
+
+                            <label class="form__label form__label_checkbox" for="pack"><input
+                                    class="form__input form__input_checkbox" id="pack" name="gifts" type="checkbox">
+                                Pack
+                                as a gift</label>
+
+
+                            <label class="form__label form__label_checkbox" for="postcard"><input
+                                    class="form__input form__input_checkbox" id="postcard" name="gifts" type="checkbox">
+                                Add postcard</label>
+
+
+                            <label class="form__label form__label_checkbox" for="discount"><input
+                                    class="form__input form__input_checkbox" id="discount" name="gifts" type="checkbox">
+                                2% discount to the next
+                                time</label>
+
+
+                            <label class="form__label form__label_checkbox" for="pen"><input
+                                    class="form__input form__input_checkbox" id="pen" name="gifts" type="checkbox">
+                                Branded pen</label>
+
+
+                            <label class="form__label form__label_checkbox" for="pencil"><input
+                                    class="form__input form__input_checkbox" id="pencil" name="gifts" type="checkbox">
+                                Branded pencil</label>
+
+                        </fieldset>
+
+                        <button class="contacts__button btn submit-btn" type="submit" disabled>Complete</button>
+                    </form>
+
                 </div>
             </section>
         </main>
@@ -173,12 +198,7 @@
             </nav>
         </footer>
     </div>
-    <div class="modal">
-        <div class="pop-up__close">
-            <img src="../../assets/icons/x_icon.svg">
-        </div>
-        <div class="modal__content"></div>
-    </div>
+
 </body>
 
 </html>

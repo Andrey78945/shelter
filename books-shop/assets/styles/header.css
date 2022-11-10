@@ -4,6 +4,7 @@
   width: 100%;
   color: var(--color-7);
   background-color: #edebe4;
+  border-bottom: 1px solid var(--color-7);
 }
 
 .header__container {
@@ -49,8 +50,8 @@ width: 40%;
 }
 
 .nav__icon {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: auto;
 }
 
 .nav__link {
