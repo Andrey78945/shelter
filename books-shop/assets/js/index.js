@@ -79,19 +79,18 @@ if (localStorage.booksInBag === undefined) {
 }
 
 let bagPrice;
-if (localStorage.bagPrice === undefined) {
+if (localStorage.bagPrice === undefined || localStorage.bagPrice === null) {
   bagPrice = 0;
 } else {
   bagPrice = JSON.parse(localStorage.bagPrice);
 }
-
+console.log(bagPrice, 'bagPrice')
 
 function deleteCurrentField(list) {
   list.replaceChildren();
 }
 
 function createSection() {
-
   const main = document.querySelector(".main");
   const sec = document.createElement('section');
   sec.classList.add('catalog');
@@ -111,11 +110,11 @@ function createSection() {
 function createItem(book, index) {
   return `<li class="catalog__item card">
             <img class="card__picture" src=${book.imageLink}
-                alt=${book.title}>
+                alt=${book.title} data-index=${index}>
             <article class="card__content">
                 <p class="card__author">${book.author}</p>
                 <h3 class="card__title">${book.title}</h3>
-                <p class="card__price">Price: <span class="price">${book.price}</span></p>
+                <p class="card__price">Price: $<span class="price">${book.price}</span></p>
                 <div class="card__buttons">
                     <button class="btn card__button show-btn" data-index=${index}>Show more</button>
                     <button class="btn card__button add-btn" data-index=${index}>Add to bag</button>
@@ -155,20 +154,16 @@ let show = document.querySelectorAll(".show-btn"),
   content = document.querySelector(".modal__content")
 
 function closePopUp() {
-  //  document.body.classList.remove('_lock')
   backstage.classList.remove('black_active')
   modal.classList.remove("modal__open")
-  //  content.removeChild(content.children[0])
 }
 
 show.forEach(el => {
   el.addEventListener("click", function () {
-    //   document.body.classList.toggle('_lock')
     modal.classList.toggle("modal__open")
     backstage.classList.toggle('black_active')
     content.querySelector(".card__title").innerHTML = books[el.dataset.index].title;
     content.querySelector(".modal__text").innerHTML = books[el.dataset.index].description;
-    //  content.append(el.querySelector('.testimonials__content').cloneNode(true))
   })
 })
 
@@ -183,7 +178,10 @@ add.forEach(el => {
     console.log(booksInBag)
     document.querySelector(".nav__bag").innerHTML = `(${booksInBag.length})`;
     el.innerHTML = "In bag";
-    bagPrice += books[el.dataset.price]
+    console.log(typeof bagPrice, 'typeof bagPrice')
+    console.log(typeof books[el.dataset.index].price, 'typeof bagPrice')
+    bagPrice += books[el.dataset.index].price;
+    console.log(bagPrice, 'bagPrice')
     localStorage.setItem('bagPrice', JSON.stringify(bagPrice));
     localStorage.setItem('booksInBag', JSON.stringify(booksInBag));
   })

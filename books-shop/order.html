@@ -10,7 +10,6 @@
 
     <link rel="preload" href="./assets/fonts/PlusJakartaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/fonts/Prata-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="./assets/fonts/plus-jakarta-sans-medium.ttf" as="font" type="font/truetype" crossorigin>
 
     <link rel="stylesheet" href="./assets/styles/fonts.css">
     <link rel="stylesheet" href="./assets/styles/normalize.css">
@@ -20,10 +19,9 @@
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <!--
-<script defer src="../../assets/js/index.js"></script>
-  <script defer src="index.js"></script>
--->
+
+    <script defer src="../../assets/js/order.js"></script>
+
 
 </head>
 
@@ -64,29 +62,37 @@
                 <div class="order__container container">
                     <h2 class="order__title section-title">SEND TO</h2>
 
-                    <form class="order__form form" id="form" action="" autocomplete="off" method="POST">
-                        <label class="form__label form__label_name" for="name">Name</label>
+                    <form class="order__form form" id="form" action="" autocomplete="off" method="POST" novalidate>
+                        <label class="form__label form__label_name" for="name">Name<span class="error"
+                                aria-live="polite"></span></label>
                         <input class="form__input form__input_name" id="name" name="name" type="text" minlength="4"
-                            required>
+                            required pattern="^[A-Za-z]*$" placeholder="John">
 
-                        <label class="form__label form__label_surname" for="surname">Surname</label>
-                        <input class="form__input form__input_surname" id="surname" name="name" type="text"
-                            minlength="5" required>
 
-                        <label class="form__label form__label_date" for="date">Delivery</label>
+                        <label class="form__label form__label_surname" for="surname">Surname<span class="error"
+                                aria-live="polite"></span></label>
+                        <input class="form__input form__input_surname" id="surname" name="surname" type="text"
+                            minlength="5" required pattern="^[A-Za-z]*$" placeholder="Gald">
+
+                        <label class="form__label form__label_date" for="date">Delivery<span class="error"
+                                aria-live="polite"></span></label>
                         <input class="form__input form__input_date" id="date" name="date" type="date" required>
 
-                        <label class="form__label form__label_street" for="street">Street</label>
+                        <label class="form__label form__label_street" for="street">Street<span class="error"
+                                aria-live="polite"></span></label>
                         <input class="form__input form__input_street" id="street" name="street" type="text"
-                            minlength="5" required>
+                            minlength="5" required pattern="^[A-Za-z0-9]{1}[A-Za-z0-9\s]*[A-Za-z0-9]{1}$"
+                            placeholder="Amazing">
 
-                        <label class="form__label form__label_house" for="house">House</label>
+                        <label class="form__label form__label_house" for="house">House<span class="error"
+                                aria-live="polite"></span></label>
                         <input class="form__input form__input_house" id="house" name="house" type="number" min="0"
-                            required>
+                            required placeholder="3">
 
-                        <label class="form__label form__label_flat" for="flat">Flat number</label>
-                        <input class="form__input form__input_flat" id="flat" name="flat" type="number" min="0"
-                            required>
+                        <label class="form__label form__label_flat" for="flat">Flat number<span class="error"
+                                aria-live="polite"></span></label>
+                        <input class="form__input form__input_flat" id="flat" name="flat" type="text" min="0" required
+                            pattern='^\d+([/-]?\d+)*$' placeholder="10">
 
                         <fieldset class="form__set" id="radio-set">
                             <legend class="form__legend">Choose the payment type</legend>
@@ -97,12 +103,14 @@
                                 Cash</label>
 
                             <label class="form__label form__label_pay" for="card"><input
-                                    class="form__input form__input_pay" id="card" name="payment" type="radio" required>
+                                    class="form__input form__input_pay" id="card" name="payment" type="radio" required
+                                    checked>
                                 Card</label>
                         </fieldset>
 
-                        <fieldset class="form__set" id="checkbox-set">
-                            <legend class="form__legend">Choose 2 gifts</legend>
+                        <fieldset class="form__set" id="checkbox-set" novalidate>
+                            <legend class="form__legend">Choose 2 gifts<span class="error" aria-live="polite"></span>
+                            </legend>
 
                             <label class="form__label form__label_checkbox" for="pack"><input
                                     class="form__input form__input_checkbox" id="pack" name="gifts" type="checkbox">
@@ -129,12 +137,10 @@
                             <label class="form__label form__label_checkbox" for="pencil"><input
                                     class="form__input form__input_checkbox" id="pencil" name="gifts" type="checkbox">
                                 Branded pencil</label>
-
                         </fieldset>
 
                         <button class="contacts__button btn submit-btn" type="submit" disabled>Complete</button>
                     </form>
-
                 </div>
             </section>
         </main>
