@@ -1,7 +1,8 @@
-let booksInBag = JSON.parse(localStorage.booksInBag).filter(x => Boolean(x)) ?? [];
-let bagPrice = JSON.parse(localStorage.bagPrice) ?? 0;
+let booksInBag = (localStorage.booksInBag !== undefined) ? JSON.parse(localStorage.booksInBag) : [];
+let bagPrice = (localStorage.bagPrice !== undefined) ? JSON.parse(localStorage.bagPrice) : 0;
 console.log(booksInBag)
 console.log(typeof booksInBag)
+console.log(bagPrice)
 function deleteCurrentField(list) {
     list.replaceChildren();
 }
@@ -20,7 +21,6 @@ function createSection() {
     h.classList.add('catalog__title');
     h.classList.add('section-title');
     document.querySelector(".catalog__container").appendChild(h);
-
 }
 
 function createItem(book, index) {
@@ -47,7 +47,6 @@ function createList(books) {
         let item = createItem(books[i], i);
         ul.insertAdjacentHTML('afterbegin', item);
     }
-
 }
 
 function createConfirm() {
@@ -58,7 +57,6 @@ function createConfirm() {
     );
 }
 
-
 function createBag(books) {
     if (document.querySelector(".main").hasChildNodes()) deleteCurrentField(document.querySelector(".main"));
     createSection();
@@ -68,7 +66,6 @@ function createBag(books) {
     } else {
         document.querySelector(".section-title").innerHTML = "THERE IS NOT A BOOK IN THE BAG"
     }
-
 }
 
 createBag(booksInBag);
@@ -77,11 +74,15 @@ createBag(booksInBag);
 const add = document.querySelectorAll(".delete-btn");
 add.forEach(el => {
     el.addEventListener("click", function () {
-        bagPrice -= booksInBag[el.dataset.index].price;
-        booksInBag.splice(el.dataset.index, 1);
+        let li = Array.from(document.querySelectorAll(".card")).filter(x => x.dataset.index === el.dataset.index)[0];
+        li.style.display = "none";
+        console.log(+li.querySelector('.price').innerHTML)
+        bagPrice -= +li.querySelector('.price').innerHTML;
+        let item = booksInBag.find(x => x.title === li.querySelector(".card__title"));
+        booksInBag.splice(booksInBag.indexOf(item), 1);
         localStorage.setItem('bagPrice', JSON.stringify(bagPrice));
         localStorage.setItem('booksInBag', JSON.stringify(booksInBag));
-        document.querySelectorAll(".card")[el.dataset.index].style.display = "none";
+
         if (bagPrice > 0) {
             document.querySelector(".total-price").innerHTML = bagPrice;
         } else {

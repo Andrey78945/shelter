@@ -110,7 +110,7 @@ function createSection() {
 function createItem(book, index) {
   return `<li class="catalog__item card">
             <img class="card__picture" src=${book.imageLink}
-                alt=${book.title} data-index=${index}>
+                alt=${book.title} data-index=${index} title="drag me in the bag">
             <article class="card__content">
                 <p class="card__author">${book.author}</p>
                 <h3 class="card__title">${book.title}</h3>
@@ -134,7 +134,6 @@ function createList(books) {
     let item = createItem(books[i], i);
     ul.insertAdjacentHTML('afterbegin', item);
   }
-
 }
 
 
@@ -173,16 +172,52 @@ backstage.addEventListener("click", closePopUp)
 /* Add to bag */
 const add = document.querySelectorAll(".add-btn");
 add.forEach(el => {
-  el.addEventListener("click", function () {
+  el.addEventListener("click", function (event) {
     booksInBag.push(books[el.dataset.index]);
-    console.log(booksInBag)
     document.querySelector(".nav__bag").innerHTML = `(${booksInBag.length})`;
     el.innerHTML = "In bag";
-    console.log(typeof bagPrice, 'typeof bagPrice')
-    console.log(typeof books[el.dataset.index].price, 'typeof bagPrice')
     bagPrice += books[el.dataset.index].price;
-    console.log(bagPrice, 'bagPrice')
-    localStorage.setItem('bagPrice', JSON.stringify(bagPrice));
-    localStorage.setItem('booksInBag', JSON.stringify(booksInBag));
+    localStorage.setItem("bagPrice", JSON.stringify(bagPrice));
+    localStorage.setItem("booksInBag", JSON.stringify(booksInBag));
+    event.target.classList.remove("dragover");
+  })
+  el.addEventListener("dragover", (event) => {
+    event.preventDefault();
+    event.target.classList.add("dragover");
+  })
+  el.addEventListener("dragenter", (event) => {
+    event.preventDefault();
+    event.target.classList.add("dragover");
+  })
+  el.addEventListener("dragleave", (event) => {
+    event.preventDefault();
+    event.target.classList.remove("dragover");
+  })
+  el.addEventListener("drop", (event) => {
+    event.preventDefault();
+    console.log(typeof el.dataset.index, 'el.dataset.index')
+    console.log(typeof event.dataTransfer.getData("text/plain"), 'event.target.dataset.index')
+    console.log(el.dataset.index === +event.dataTransfer.getData("text/plain"))
+    if (el.dataset.index === event.dataTransfer.getData("text/plain")) {
+      booksInBag.push(books[el.dataset.index]);
+      document.querySelector(".nav__bag").innerHTML = `(${booksInBag.length})`;
+      el.innerHTML = "In bag";
+      bagPrice += books[el.dataset.index].price;
+      localStorage.setItem("bagPrice", JSON.stringify(bagPrice));
+      localStorage.setItem("booksInBag", JSON.stringify(booksInBag));
+    }
+    event.target.classList.remove("dragover");
+  })
+})
+
+/* Drag and drop */
+const draggableImages = document.querySelectorAll(".card__picture");
+draggableImages.forEach(image => {
+  image.addEventListener("dragstart", (event) => {
+    event.dataTransfer.setData("text/plain", `${image.dataset.index}`)
+  })
+  image.addEventListener("dragend", (event) => {
+    event.preventDefault();
+    event.target.classList.remove("dragover");
   })
 })

@@ -423,3 +423,9 @@ input:focus:invalid {
   opacity: .3;
   cursor: unset;
 }
+
+.dragover {
+  color: white;
+  background-color: var(--color-hover);
+  z-index: 100;
+}
