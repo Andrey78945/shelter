@@ -1,7 +1,14 @@
 let confirm = document.querySelector(".submit-btn");
 const validations = [false, false, false, false, false, false, true];
 
-confirm.addEventListener("click", () => localStorage.clear());
+confirm.addEventListener("click", () => {
+    localStorage.clear();
+    alert(`
+    The order created.
+    The delivry adress is ${userStreet.value} street house ${userHouse.value} flat ${userFlat.value}.
+    Customer ${userName.value} ${userSurname.value}.
+    `)
+});
 
 function checkValidity() {
     if (validations.every(x => x)) {
