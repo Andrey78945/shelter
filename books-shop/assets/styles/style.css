@@ -82,6 +82,10 @@ svg {
   transition: all .4s ease;
 }
 
+.main {
+  padding-top: 122px;
+}
+
 .site-container {
   position: relative;
   overflow: hidden;
