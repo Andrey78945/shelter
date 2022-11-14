@@ -195,8 +195,7 @@ add.forEach(el => {
   })
   el.addEventListener("drop", (event) => {
     event.preventDefault();
-    console.log(typeof el.dataset.index, 'el.dataset.index')
-    console.log(typeof event.dataTransfer.getData("text/plain"), 'event.target.dataset.index')
+
     console.log(el.dataset.index === +event.dataTransfer.getData("text/plain"))
     if (el.dataset.index === event.dataTransfer.getData("text/plain")) {
       booksInBag.push(books[el.dataset.index]);
