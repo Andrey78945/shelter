@@ -1,11 +1,13 @@
 let confirm = document.querySelector(".submit-btn");
+const validations = [false, false, false, false, false, false, true];
 
 confirm.addEventListener("click", () => localStorage.clear());
 
 function checkValidity() {
-    const errors = document.querySelectorAll(".error .active")
-    if (errors.length === 0) {
+    if (validations.every(x => x)) {
         confirm.removeAttribute("disabled");
+    } else {
+        confirm.disabled = "disabled";
     }
 }
 
@@ -14,15 +16,15 @@ const nameError = document.querySelector('.form__label_name > span.error');
 
 userName.addEventListener('input', function (event) {
     if (userName.validity.valid) {
+        validations[0] = true;
         nameError.textContent = '';
         nameError.className = 'error';
-        checkValidity();
     } else {
+        validations[0] = false;
         showNameError();
     }
+    checkValidity();
 });
-
-
 
 function showNameError() {
     if (userName.validity.valueMissing) {
@@ -40,12 +42,14 @@ const surnameError = document.querySelector('.form__label_surname > span.error')
 
 userSurname.addEventListener('input', function (event) {
     if (userSurname.validity.valid) {
+        validations[1] = true;
         surnameError.textContent = '';
         surnameError.className = 'error';
-        checkValidity();
     } else {
+        validations[1] = false;
         showSurNameError();
     }
+    checkValidity();
 });
 
 function showSurNameError() {
@@ -69,12 +73,14 @@ let tomorrow = new Date(year, month, day + 1);
 
 userDate.addEventListener('input', function (event) {
     if (new Date(userDate.value) >= tomorrow) {
+        validations[2] = true;
         dateError.textContent = '';
         dateError.className = 'error';
-        checkValidity();
     } else {
+        validations[2] = false;
         showDateError();
     }
+    checkValidity();
 });
 
 function showDateError() {
@@ -87,12 +93,14 @@ const streetError = document.querySelector('.form__label_street > span.error');
 
 userStreet.addEventListener('input', function (event) {
     if (userStreet.validity.valid) {
+        validations[3] = true;
         streetError.textContent = '';
         streetError.className = 'error';
-        checkValidity();
     } else {
+        validations[3] = false;
         showStreetError();
     }
+    checkValidity();
 });
 
 function showStreetError() {
@@ -111,12 +119,14 @@ const houseError = document.querySelector('.form__label_house > span.error');
 
 userHouse.addEventListener('input', function (event) {
     if (+userHouse.value > 0) {
+        validations[4] = true;
         houseError.textContent = '';
         houseError.className = 'error';
-        checkValidity();
     } else {
+        validations[4] = false;
         showHouseError();
     }
+    checkValidity();
 });
 
 function showHouseError() {
@@ -129,12 +139,14 @@ const flatError = document.querySelector('.form__label_flat > span.error');
 
 userFlat.addEventListener('input', function (event) {
     if (userFlat.validity.valid) {
+        validations[5] = true;
         flatError.textContent = '';
         flatError.className = 'error';
-        checkValidity();
     } else {
+        validations[5] = false;
         showFlatError();
     }
+    checkValidity();
 });
 
 function showFlatError() {
@@ -146,13 +158,28 @@ function showFlatError() {
     flatError.className = 'error active';
 }
 
-// form.addEventListener('submit', function (event) {
-//     // Если поле email валдно, позволяем форме отправляться
 
-//     if (!email.validity.valid) {
-//         // Если поле email не валидно, отображаем соответствующее сообщение об ошибке
-//         showError();
-//         // Затем предотвращаем стандартное событие отправки формы
-//         event.preventDefault();
-//     }
-// });
+const userGifts = document.querySelectorAll('.form__input_checkbox');
+const giftError = document.querySelector('#gifts > span.error');
+console.log(Array.from(userGifts).filter(x => x.checked).length, 'length')
+userGifts.forEach((gift) => {
+    gift.addEventListener("input", function (event) {
+        console.log(gift.checked, gift)
+        console.log(Array.from(userGifts).filter(x => x.checked).length, 'length')
+        if (Array.from(userGifts).filter(x => x.checked).length <= 2) {
+            validations[6] = true;
+            giftError.textContent = '';
+            giftError.className = 'error';
+        } else {
+            console.log(">2")
+            validations[6] = false;
+            showGiftError();
+        }
+        checkValidity();
+    });
+});
+
+function showGiftError() {
+    giftError.textContent = 'You can choose no more than 2 gifts.';
+    giftError.className = 'error active';
+}

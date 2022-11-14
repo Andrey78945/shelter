@@ -21,8 +21,6 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
     <script defer src="../../assets/js/order.js"></script>
-
-
 </head>
 
 <body>
@@ -36,8 +34,8 @@
                 <nav class="header__nav nav">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <img class="nav__icon" src="./assets/icons/person.svg" alt="">
-                            <a class="nav__link" href="#">John Gald</a>
+                            <a class="nav__link" href="#"><img class="nav__icon" src="./assets/icons/person.svg"
+                                    alt="">John Gald</a>
                         </li>
 
                         <li class="nav__item">
@@ -49,8 +47,8 @@
                         </li>
 
                         <li class="nav__item">
-                            <img class="nav__icon" src="./assets/icons/search.svg" alt="">
-                            <a class="nav__link" href="#">Search</a>
+                            <a class="nav__link" href="#"><img class="nav__icon" src="./assets/icons/search.svg"
+                                    alt="">Search</a>
                         </li>
                     </ul>
                 </nav>
@@ -62,7 +60,8 @@
                 <div class="order__container container">
                     <h2 class="order__title section-title">SEND TO</h2>
 
-                    <form class="order__form form" id="form" action="" autocomplete="off" method="POST" novalidate>
+                    <form class="order__form form" id="form" action="index.html" autocomplete="off" method="POST"
+                        novalidate>
                         <label class="form__label form__label_name" for="name">Name<span class="error"
                                 aria-live="polite"></span></label>
                         <input class="form__input form__input_name" id="name" name="name" type="text" minlength="4"
@@ -109,7 +108,8 @@
                         </fieldset>
 
                         <fieldset class="form__set" id="checkbox-set" novalidate>
-                            <legend class="form__legend">Choose 2 gifts<span class="error" aria-live="polite"></span>
+                            <legend class="form__legend" id="gifts">Choose 2 gifts<span class="error"
+                                    aria-live="polite"></span>
                             </legend>
 
                             <label class="form__label form__label_checkbox" for="pack"><input

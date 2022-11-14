@@ -218,13 +218,15 @@ section {
 }
 
 .add-btn:hover,
-.confirm-btn:hover {
+.confirm-btn:hover,
+.submit-btn:hover {
   color: var(--color-hover);
   border-color: var(--color-hover);
 }
 
 .add-btn:active,
-.confirm-btn:active {
+.confirm-btn:active,
+.submit-btn:active {
   color: var(--color-active);
   border-color: var(--color-active);
 }
@@ -395,7 +397,8 @@ input:focus:invalid {
   outline: none;
 }
 
-.form__label {
+.form__label,
+.form__legend {
   position: relative;
 }
 
