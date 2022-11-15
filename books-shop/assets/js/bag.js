@@ -53,7 +53,7 @@ function createConfirm() {
     let list = document.querySelector(".catalog__list")
     list.insertAdjacentHTML('afterend',
         `<p class="card__price total-card-price">Total: $<span class="price total-price">${bagPrice}</span></p>
-        <a class="btn catalog__button confirm-btn" href="./order.html">Confirm order</a>`
+        <a class="btn catalog__button confirm-btn btn-gray" href="./order.html">Confirm order</a>`
     );
 }
 

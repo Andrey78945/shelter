@@ -175,6 +175,7 @@ section {
 
 .card__author {
   margin-bottom: 20px;
+  width: 75%;
   font-size: 14px;
 }
 
@@ -216,27 +217,19 @@ section {
   background-color: var(--color-active);
 }
 
-.add-btn,
-.submit-btn,
-.confirm-btn {
+.btn-gray {
   padding: 5px 10px;
   background-color: #d1cdcd;
   border-color: #7a7a7a;
 }
 
-.add-btn:hover,
-.confirm-btn:hover,
-.submit-btn:hover,
-.add-btn:focus,
-.confirm-btn:focus,
-.submit-btn:focus {
+.btn-gray:hover,
+.btn-gray:focus {
   color: var(--color-hover);
   border-color: var(--color-hover);
 }
 
-.add-btn:active,
-.confirm-btn:active,
-.submit-btn:active {
+.btn-gray:active {
   color: var(--color-active);
   border-color: var(--color-active);
 }
