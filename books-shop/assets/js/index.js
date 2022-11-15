@@ -214,6 +214,7 @@ const draggableImages = document.querySelectorAll(".card__picture");
 draggableImages.forEach(image => {
   image.addEventListener("dragstart", (event) => {
     event.dataTransfer.setData("text/plain", `${image.dataset.index}`)
+    event.dataTransfer.setDragImage(image, image.width / 2, image.height / 2)
   })
   image.addEventListener("dragend", (event) => {
     event.preventDefault();
