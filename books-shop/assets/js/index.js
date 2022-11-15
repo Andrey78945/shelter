@@ -10,7 +10,7 @@ const books = [{
   "imageLink": "./assets/images/EffectiveJavaScript68.webp",
   "title": "Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript",
   "price": 22,
-  "description": "Effective JavaScript is organized around 68 proven approaches for writing better JavaScript, backed by concrete examples. You�ll learn how to choose the right programming style for each project, manage unanticipated problems, and work more successfully with every facet of JavaScript programming from data structures to concurrency"
+  "description": "Effective JavaScript is organized around 68 proven approaches for writing better JavaScript, backed by concrete examples. You'll learn how to choose the right programming style for each project, manage unanticipated problems, and work more successfully with every facet of JavaScript programming from data structures to concurrency"
 },
 {
   "author": "David Flanagan",
@@ -24,7 +24,7 @@ const books = [{
   "imageLink": "./assets/images/ProgrammingJavaScriptApplications.webp",
   "title": "Programming JavaScript Applications",
   "price": 19,
-  "description": "Take advantage of JavaScript's power to build robust web-scale or enterprise applications that are easy to extend and maintain. By applying the design patterns outlined in this practical book, experienced JavaScript developers will learn how to write flexible and resilient code that�s easier�yes, easier�to work with as your code base grows."
+  "description": "Take advantage of JavaScript's power to build robust web-scale or enterprise applications that are easy to extend and maintain. By applying the design patterns outlined in this practical book, experienced JavaScript developers will learn how to write flexible and resilient code that's easier to work with as your code base grows."
 },
 {
   "author": "Addy Osmani",
@@ -117,7 +117,7 @@ function createItem(book, index) {
                 <p class="card__price">Price: $<span class="price">${book.price}</span></p>
                 <div class="card__buttons">
                     <button class="btn card__button show-btn" data-index=${index}>Show more</button>
-                    <button class="btn card__button add-btn" data-index=${index}>Add to bag</button>
+                    <button class="btn card__button add-btn btn-gray" data-index=${index}>Add to bag</button>
                 </div>
                 <button class="btn card__button delete-btn" data-index=${index}>X</button>
             </article>
@@ -214,6 +214,7 @@ const draggableImages = document.querySelectorAll(".card__picture");
 draggableImages.forEach(image => {
   image.addEventListener("dragstart", (event) => {
     event.dataTransfer.setData("text/plain", `${image.dataset.index}`)
+    event.dataTransfer.setDragImage(image, image.width / 2, image.height / 2)
   })
   image.addEventListener("dragend", (event) => {
     event.preventDefault();
